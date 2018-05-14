@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>jQuery DForm Test</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="dist/jquery.dform-1.1.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style type="text/css">
+    input,
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form id="demo-1-form"></form>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" class="demo" id="demo-1">
+    $(function () {
+      $("#demo-1-form").dform({
+        "action": "index.html",
+        "method": "get",
+        "html": [
+          {
+            "type": "container",
+            "id": "p-container",
+            "html": [
+              { "type": "p", "html": "You must login." }
+            ]
+          },
+          {
+            "name": "username",
+            "id": "txt-username",
+            "caption": "Username",
+            "type": "text",
+            "placeholder": "user@example.com"
+          },
+          {
+            "name": "password",
+            "caption": "Password",
+            "type": "password"
+          },
+          {
+            "type": "submit",
+            "value": "Login"
+          },
+          { "type": "container" },
+          { "type": "text" },
+          { "type": "password" },
+          { "type": "submit" },
+          { "type": "reset" },
+          { "type": "hidden" },
+          { "type": "file" },
+          {
+            "type": "container", "html": [
+              { "type": "radio", "name": "radio1", "value": "Yes", "caption": "Yes" },
+              { "type": "radio", "name": "radio1", "value": "No", "caption": "No" }
+            ]
+          },
+          { "type": "checkbox" },
+          { "type": "radiobuttons" },
+          { "type": "number" },
+          { "type": "url" },
+          { "type": "tel" },
+          { "type": "email" },
+          {
+            "type": "select",
+            "options": {
+              "us": "USA",
+              "ca": "Canada",
+              "de": {
+                "selected": "selected",
+                "html": "Germany"
+              }
+            }
+          },
+          {
+            "type": "checkboxes",
+            "options": {
+              "us": "USA",
+              "ca": {
+                "checked": "checked",
+                "caption": "Canada"
+              },
+              "de": "Germany"
+            }
+          },
+          {
+            "type": "select",
+            "options": {
+              "northamerica": {
+                "type": "optgroup",
+                "label": "North America",
+                "options": {
+                  "us": "USA",
+                  "ca": "Canada"
+                }
+              },
+              "europe": {
+                "type": "optgroup",
+                "label": "Europe",
+                "options": {
+                  "de": { "selected": "selected", "html": "Germany" },
+                  "fr": "France"
+                }
+              }
+            }
+          },
+          {
+            "type": "checkboxes",
+            "options": { "newsletter": "Receive the newsletter", "terms": "I read the terms of service", "update": "Keep me up to date on new events" }
+          },
+          {
+            "type": "text",
+            "name": "username",
+            "id": "username",
+            "caption": "Enter your username"
+          },
+          {
+            "type": "fieldset",
+            "caption": "Address"
+          },
+          {
+            "type": "progressbar",
+            "value": "20"
+          },
+          {
+            "type": "slider",
+            "step": 5,
+            "value": 25
+          },
+          {
+            "type": "accordion",
+            "animated": "bounceslide",
+            "entries": [
+              {
+                "caption": "First entry",
+                "html": "Content 1"
+              },
+              {
+                "caption": "Second entry",
+                "html": "Content 2"
+              }
+            ]
+          },
+          {
+            "type": "tabs",
+            "entries": [
+              {
+                "caption": "Tab 1",
+                "id": "first",
+                "html": "Content 1"
+              },
+              {
+                "caption": "Tab 2",
+                "id": "second",
+                "html": "Content 2"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "caption": "Datepicker",
+            "datepicker": {
+              "minDate": "+1"
+            }
+          }
+        ]
+      });
+    });
+  </script>
+</body>
+
+</html>
